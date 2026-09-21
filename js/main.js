@@ -1,9 +1,7 @@
 const DCARDSLAB_CONFIG = {
-  // Placeholder: replace with the final eBay shop URL when available.
-  ebayUrl: "",
+  ebayUrl: "https://www.ebay.de/sch/i.html?_ssn=dennis281086",
 
-  // Placeholder: replace with the final Instagram profile URL when available.
-  instagramUrl: "",
+  instagramUrl: "https://www.instagram.com/dcardslab/",
 };
 
 function applyConfiguredLinks() {

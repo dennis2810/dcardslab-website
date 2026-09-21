@@ -1,0 +1,4 @@
+/* Central link configuration. Replace placeholders when final profiles are available. */
+const DCARDSLAB_CONFIG={ebayUrl:null,instagramUrl:null};
+function applyExternalLinks(){document.querySelectorAll("[data-link]").forEach(a=>{const key=a.dataset.link+"Url",url=DCARDSLAB_CONFIG[key];if(url){a.href=url;a.target="_blank"}else{a.href="#";a.dataset.placeholder="true";a.title="Link folgt";a.addEventListener("click",e=>e.preventDefault())}})}
+applyExternalLinks();document.getElementById("year").textContent=new Date().getFullYear();const toggle=document.querySelector(".nav-toggle"),nav=document.querySelector(".nav");toggle?.addEventListener("click",()=>{const open=nav.classList.toggle("open");toggle.setAttribute("aria-expanded",String(open));toggle.textContent=open?"×":"☰"});nav?.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{nav.classList.remove("open");toggle?.setAttribute("aria-expanded","false");if(toggle)toggle.textContent="☰"}));

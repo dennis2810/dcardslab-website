@@ -9,11 +9,13 @@
 //
 // PING_URL muss die OEFFENTLICH erreichbare Adresse des Tools sein (nicht
 // die interne 192.168.x-Adresse, die ein Website-Besucher nie erreichen
-// kann). Diese Tunnel-Adresse aendert sich gelegentlich (z.B. bei einem
-// Neustart des Containers) - dann hier die neue externe Adresse eintragen
-// (siehe main.py-Log/README im dcardslab-manager-Repo).
+// kann). Laeuft seit 26.09.2026 ueber einen Cloudflare Tunnel (cloudflared
+// auf dem NAS) statt der bisherigen, gelegentlich wechselnden und zudem
+// login-pflichtigen ugdocker.link-Adresse (die leitete anonyme Besucher auf
+// den NAS-Login um statt zum Tool durchzulassen - Ursache der "keine Views"-
+// Meldungen) - app.dcardslab.de ist jetzt fest und ohne Login erreichbar.
 (function () {
-  var PING_URL = "https://app-8000-desonas.eur4.ugdocker.link/api/website-views/ping";
+  var PING_URL = "https://app.dcardslab.de/api/website-views/ping";
   try {
     if (navigator.sendBeacon) {
       navigator.sendBeacon(PING_URL);
